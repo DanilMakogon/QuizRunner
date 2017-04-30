@@ -11,7 +11,7 @@ using namespace std;
 int main() {
 	init();
 	intro();
-	getch();
+	mainMenu();
 	returnToNormalMode();
 	return 0;
 }
