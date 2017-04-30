@@ -1,2 +1,0 @@
-# QuizRunner
-Testing system
