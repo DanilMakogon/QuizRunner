@@ -92,6 +92,8 @@ void mainMenu() {
 	addstr("Нажимай '1', '2', '3', '4' или 'A', 'B', 'C', 'D'");
 	move(20, 10);
 	addstr("для выбора варианта ответа");
+	move(21, 10);
+	addstr("Нажми ESCAPE в любой момент для выхода");
 	refresh();
 	getch();
 }
@@ -100,14 +102,19 @@ void showQuestion(short questionNumber) {
 	clear();
 	move(1, 1);
 	addstr(dataBase[questionNumber].ques.c_str());
-	move(2, 1);
-	addstr(dataBase[questionNumber].ans1.c_str());
 	move(3, 1);
-	addstr(dataBase[questionNumber].ans2.c_str());
+	addstr("1) ");
+	addstr(dataBase[questionNumber].ans1.c_str());
 	move(4, 1);
-	addstr(dataBase[questionNumber].ans3.c_str());
+	addstr("2) ");
+	addstr(dataBase[questionNumber].ans2.c_str());
 	move(5, 1);
+	addstr("3) ");
+	addstr(dataBase[questionNumber].ans3.c_str());
+	move(6, 1);
+	addstr("4) ");
 	addstr(dataBase[questionNumber].ans4.c_str());
+	refresh();
 }
 
 void returnToNormalMode() {

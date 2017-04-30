@@ -21,5 +21,6 @@ extern vector< baseStruct > dataBase;
 int readBase();
 int readKey();
 bool checkAnswer(short questionNumber, short choose);
+void endProgramm();
 
 #endif

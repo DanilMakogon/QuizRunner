@@ -1,4 +1,5 @@
 #include "../headers/functions.h"
+#include "../headers/design.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -30,23 +31,31 @@ int readBase() {
 }
 
 int readKey() {
-	char c = getch();
-	switch(c) {
-		case 'a': case 'A': case '1': {
-			return 1;
-			break;
-		}
-		case 'b': case 'B': case '2': {
-			return 2;
-			break;
-		}
-		case 'c': case 'C': case '3': {
-			return 3;
-			break;
-		}
-		case 'd': case 'D': case '4': {
-			return 4;
-			break;
+	while (true) {
+		char c = getch();
+		switch(c) {
+			case 'a': case 'A': case '1': {
+				return 1;
+				break;
+			}
+			case 'b': case 'B': case '2': {
+				return 2;
+				break;
+			}
+			case 'c': case 'C': case '3': {
+				return 3;
+				break;
+			}
+			case 'd': case 'D': case '4': {
+				return 4;
+				break;
+			}
+			case 27: {
+				endProgramm();
+				break;
+			}
+			default:
+				break;
 		}
 	}
 	return -1;
@@ -57,4 +66,9 @@ bool checkAnswer(short questionNumber, short choose) {
 		return true;
 	else
 		return false;
+}
+
+void endProgramm() {
+	returnToNormalMode();
+	exit(0);
 }
