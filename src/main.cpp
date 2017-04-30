@@ -11,8 +11,19 @@ using namespace std;
 int main() {
 	readBase();
 	init();
-	intro();
-	mainMenu();
-	returnToNormalMode();
+	while (true) {
+		intro();
+		mainMenu();
+
+		short counter = 0;
+		short choose = 0;
+		for (short i = 0; i < 20; ++i) {
+			showQuestion(i);
+			choose = readKey();
+			if (checkAnswer(i, choose))
+				counter++;
+		}
+		returnToNormalMode();
+	}
 	return 0;
 }

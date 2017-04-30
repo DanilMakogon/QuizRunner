@@ -1,4 +1,5 @@
 #include "../headers/design.h"
+#include "../headers/functions.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -13,12 +14,17 @@ void init() {
 	curs_set(0);
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_CYAN);
+	init_pair(2, COLOR_WHITE, COLOR_CYAN);
 	attron(COLOR_PAIR(1));
 	bkgd(COLOR_PAIR(1));
 	refresh();
 }
 
 void intro() {
+	clear();
+	attron(COLOR_PAIR(2));
+	border(0, 0, 0, 0, 0, 0, 0, 0);
+	attron(COLOR_PAIR(1));
 	move(1, 3);
 	addstr(" _______  _______  _______  _______    _______          _________ _______ ");
 	move(2, 3);
@@ -35,6 +41,7 @@ void intro() {
 	addstr("| )      | ) \\ \\__| (___) || (___) |  | (_\\ \\ || (___) |___) (___ /   (_/\\");
 	move(8, 3);
 	addstr("|/       |/   \\__/(_______)(_______)  (____\\/_)(_______)\\_______/(_______/");
+	attron(COLOR_PAIR(2));
 	move(11, 20);
 	addstr("Авторы:");
 	move(13, 20);
@@ -51,6 +58,9 @@ void intro() {
 
 void mainMenu() {
 	clear();
+	attron(COLOR_PAIR(2));
+	border(0, 0, 0, 0, 0, 0, 0, 0);
+	attron(COLOR_PAIR(1));
 	move(1, 3);
 	addstr(" _______  _______  _______  _______    _______          _________ _______ ");
 	move(2, 3);
@@ -67,6 +77,7 @@ void mainMenu() {
 	addstr("| )      | ) \\ \\__| (___) || (___) |  | (_\\ \\ || (___) |___) (___ /   (_/\\");
 	move(8, 3);
 	addstr("|/       |/   \\__/(_______)(_______)  (____\\/_)(_______)\\_______/(_______/");
+	attron(COLOR_PAIR(2));
 	move(11, 10);
 	addstr("Правила:");
 	move(13, 10);
@@ -83,6 +94,20 @@ void mainMenu() {
 	addstr("для выбора варианта ответа");
 	refresh();
 	getch();
+}
+
+void showQuestion(short questionNumber) {
+	clear();
+	move(1, 1);
+	addstr(dataBase[questionNumber].ques.c_str());
+	move(2, 1);
+	addstr(dataBase[questionNumber].ans1.c_str());
+	move(3, 1);
+	addstr(dataBase[questionNumber].ans2.c_str());
+	move(4, 1);
+	addstr(dataBase[questionNumber].ans3.c_str());
+	move(5, 1);
+	addstr(dataBase[questionNumber].ans4.c_str());
 }
 
 void returnToNormalMode() {

@@ -12,5 +12,6 @@ void init();
 void intro();
 void mainMenu();
 void returnToNormalMode();
+void showQuestion(short questionNumber);
 
 #endif

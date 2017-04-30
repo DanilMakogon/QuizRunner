@@ -51,3 +51,10 @@ int readKey() {
 	}
 	return -1;
 }
+
+bool checkAnswer(short questionNumber, short choose) {
+	if (dataBase[questionNumber].right_ans == choose)
+		return true;
+	else
+		return false;
+}
