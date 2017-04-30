@@ -25,7 +25,7 @@ int readKey() {
 	initscr();
 	echo();
 	char c;
-	scanf("%c", &c);
+	scanw("%c", &c);
 	switch(c) {
 		case 'a': case 'A': case '1': {
 			return 1;
