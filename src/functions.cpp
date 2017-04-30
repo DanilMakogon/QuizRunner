@@ -4,19 +4,31 @@
 #include <fstream>
 #include <vector>
 #include <ncurses.h>
+#include <cstdlib>
 
 using namespace std;
 
 vector< baseStruct > dataBase;
 
-int readBase(char *filename) {
-	ifstream ist(filename);
+int readBase() {
+	ifstream ist("base.txt");
 	baseStruct tempStruct;
+	string r_ans;
 	while(!ist.eof()) {
-		ist >> tempStruct.ques >> tempStruct.ans1 >> tempStruct.ans2 >> tempStruct.ans3 >> tempStruct.ans4 >> tempStruct.right_ans;
-		dataBase.push_back(tempStruct);
 		if (ist.eof())
 			break;
+		getline(ist, tempStruct.ques);
+		getline(ist, tempStruct.ans1);
+		getline(ist, tempStruct.ans2);
+		getline(ist, tempStruct.ans3);
+		getline(ist, tempStruct.ans4);
+		getline(ist, r_ans);
+		tempStruct.right_ans = atoi(r_ans.c_str());
+		cout << endl << " good()=" << ist.good();
+ 		cout << endl << " eof()=" << ist.eof();
+ 		cout << endl << " fail()=" << ist.fail();
+  		cout << endl << " bad()=" << ist.bad();
+		dataBase.push_back(tempStruct);
 	}
 	return dataBase.size();
 }

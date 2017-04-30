@@ -18,7 +18,7 @@ struct baseStruct {
 extern vector< baseStruct > dataBase;
 
 
-int readBase(char *filename);
+int readBase();
 int readKey();
 
 
