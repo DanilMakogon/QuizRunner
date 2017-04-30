@@ -2,9 +2,11 @@
 #define FUNCTIONS_H
 
 #include <string>
+#include <vector>
+
 using namespace std;
 
-struct base {
+struct baseStruct {
 	string ques;
 	string ans1;
 	string ans2;
@@ -12,6 +14,9 @@ struct base {
 	string ans4;
 	short right_ans;
 };
+
+extern vector< baseStruct > dataBase;
+
 
 int readBase(char *filename);
 

@@ -2,16 +2,16 @@ all: executable
 	./bin/main
 
 executable: design functions main 
-	gcc obj/functions.o obj/design.o obj/main.o -Wall -o bin/main
+	g++ obj/functions.o obj/design.o obj/main.o -Wall -o bin/main -lstdc++
 
 design: src/design.cpp
-	gcc src/design.cpp -c -o obj/design.o -Wall
+	g++ src/design.cpp -c -o obj/design.o -Wall -lstdc++
 
 main: src/main.cpp
-	gcc src/main.cpp -c -o obj/main.o -Wall
+	g++ src/main.cpp -c -o obj/main.o -Wall -lstdc++
 
 functions: src/functions.cpp
-	gcc src/functions.cpp -c -o obj/functions.o -Wall
+	g++ src/functions.cpp -c -o obj/functions.o -Wall -lstdc++
 
 clean:
 	rm -rf obj/*.o
