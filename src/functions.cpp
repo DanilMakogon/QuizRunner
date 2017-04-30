@@ -24,10 +24,6 @@ int readBase() {
 		getline(ist, tempStruct.ans4);
 		getline(ist, r_ans);
 		tempStruct.right_ans = atoi(r_ans.c_str());
-		cout << endl << " good()=" << ist.good();
- 		cout << endl << " eof()=" << ist.eof();
- 		cout << endl << " fail()=" << ist.fail();
-  		cout << endl << " bad()=" << ist.bad();
 		dataBase.push_back(tempStruct);
 	}
 	return dataBase.size();
