@@ -23,7 +23,8 @@ int main() {
 			if (checkAnswer(i, choose))
 				counter++;
 		}
-		returnToNormalMode();
+		showResult(counter);
 	}
+	returnToNormalMode();
 	return 0;
 }

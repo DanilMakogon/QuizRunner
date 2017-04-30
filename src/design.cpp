@@ -114,3 +114,7 @@ void returnToNormalMode() {
 	echo();
 	endwin();
 }
+
+void showResult(short result) {
+	getch();
+}
