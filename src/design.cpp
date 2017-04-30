@@ -116,5 +116,19 @@ void returnToNormalMode() {
 }
 
 void showResult(short result) {
+	clear();
+	move(1, 1);
+	if (result <= 7) {
+		addstr("Junior");
+	} else
+	if (result <= 14) {
+		addstr("Middle");
+	} else
+	if (result <= 18) {
+		addstr("Senior");
+	} else
+	if (result <= 20) {
+		addstr("Team Lead");
+	}
 	getch();
 }
