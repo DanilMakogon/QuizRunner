@@ -18,7 +18,7 @@ int main() {
 		intro();
 		mainMenu();
 		
-		srand(time(NULL));
+		/*srand(time(NULL));
 		for (int i = 0; i < 20; ++i)
 			questionNumbers[i] = 0;
 		for (int i = 0; i < 20; ++i) {
@@ -39,9 +39,9 @@ int main() {
 			if (checkAnswer(i, choose))
 				counter++;
 		}
-		
-		showResult(counter);
+		*/
+		showResult(4);
 	}
-	returnToNormalMode();
+	endProgramm();
 	return 0;
 }
