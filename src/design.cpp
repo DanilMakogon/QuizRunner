@@ -98,8 +98,10 @@ void mainMenu() {
 	getch();
 }
 
-void showQuestion(short questionNumber) {
+void showQuestion(short questionNumber, short currentQuestion) {
 	clear();
+	move(2, 34);
+	printw("%d / 20", currentQuestion);
 	attron(COLOR_PAIR(2));
 	move(6, 10);
 	for (unsigned short i = 0; i < dataBase[questionNumber].ques.size(); ++i) {

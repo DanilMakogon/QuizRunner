@@ -12,7 +12,7 @@ void init();
 void intro();
 void mainMenu();
 void returnToNormalMode();
-void showQuestion(short questionNumber);
+void showQuestion(short questionNumber, short currentQuestion);
 void showResult(short result);
 
 #endif

@@ -34,7 +34,7 @@ int main() {
 		short resultCounter = 0;
 		short choose = 0;
 		for (short i = 0; i < 20; ++i) {
-			showQuestion(questionNumbers[i]);
+			showQuestion(questionNumbers[i], i + 1);
 			choose = readKey();
 			if (checkAnswer(i, choose))
 				resultCounter++;
