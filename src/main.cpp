@@ -18,7 +18,7 @@ int main() {
 		intro();
 		mainMenu();
 		
-		/*srand(time(NULL));
+		srand(time(NULL));
 		for (int i = 0; i < 20; ++i)
 			questionNumbers[i] = 0;
 		for (int i = 0; i < 20; ++i) {
@@ -31,16 +31,15 @@ int main() {
 			}
 		}
 
-		short counter = 0;
+		short resultCounter = 0;
 		short choose = 0;
 		for (short i = 0; i < 20; ++i) {
 			showQuestion(questionNumbers[i]);
 			choose = readKey();
 			if (checkAnswer(i, choose))
-				counter++;
+				resultCounter++;
 		}
-		*/
-		showResult(4);
+		showResult(resultCounter);
 	}
 	endProgramm();
 	return 0;
