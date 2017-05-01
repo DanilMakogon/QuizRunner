@@ -100,20 +100,52 @@ void mainMenu() {
 
 void showQuestion(short questionNumber) {
 	clear();
-	move(1, 1);
-	addstr(dataBase[questionNumber].ques.c_str());
-	move(3, 1);
-	addstr("1) ");
-	addstr(dataBase[questionNumber].ans1.c_str());
-	move(4, 1);
-	addstr("2) ");
-	addstr(dataBase[questionNumber].ans2.c_str());
+	attron(COLOR_PAIR(2));
 	move(5, 1);
+	for (unsigned short i = 0; i < dataBase[questionNumber].ques.size(); ++i) {
+		char c = dataBase[questionNumber].ques[i];
+		if (c == '$')
+			printw("\n ");
+		else
+		printw("%c", c);
+	}
+	move(10, 1);
+	addstr("1) ");
+	for (unsigned short i = 0; i < dataBase[questionNumber].ans1.size(); ++i) {
+		char c = dataBase[questionNumber].ans1[i];
+		if (c == '$')
+			printw("\n    ");
+		else
+		printw("%c", c);
+	}
+	move(13, 1);
+	addstr("2) ");
+	for (unsigned short i = 0; i < dataBase[questionNumber].ans2.size(); ++i) {
+		char c = dataBase[questionNumber].ans2[i];
+		if (c == '$')
+			printw("\n    ");
+		else
+		printw("%c", c);
+	}
+	move(16, 1);
 	addstr("3) ");
-	addstr(dataBase[questionNumber].ans3.c_str());
-	move(6, 1);
+	for (unsigned short i = 0; i < dataBase[questionNumber].ans3.size(); ++i) {
+		char c = dataBase[questionNumber].ans3[i];
+		if (c == '$')
+			printw("\n    ");
+		else
+		printw("%c", c);
+	}
+	move(19, 1);
 	addstr("4) ");
-	addstr(dataBase[questionNumber].ans4.c_str());
+	for (unsigned short i = 0; i < dataBase[questionNumber].ans4.size(); ++i) {
+		char c = dataBase[questionNumber].ans4[i];
+		if (c == '$')
+			printw("\n    ");
+		else
+		printw("%c", c);
+	}
+	border(0, 0, 0, 0, 0, 0, 0, 0);
 	refresh();
 }
 
